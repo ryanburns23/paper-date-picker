@@ -14,9 +14,11 @@
         height: 100%;
         @apply(--paper-font-common-base);
         /* for iron-list to fit */
-        position: relative;
+        position: relative;'
+        background: #212121;
       }
       .year {
+        background: #212121;
         cursor: pointer;
         height: var(--paper-year-list-item-height, 44px);
         line-height: var(--paper-year-list-item-height, 44px);
@@ -24,7 +26,7 @@
         vertical-align: middle;
       }
       .selected {
-        color: var(--default-primary-color);
+        color: var(--app-secondary-color, green);
         font-size: 24px;
       }
       iron-list {
@@ -86,7 +88,7 @@
         }
       },
       ready: function() {
-        // hack for iron-list not to scroll to the first visible index on resize 
+        // hack for iron-list not to scroll to the first visible index on resize
         this.$.yearList._resizeHandler = function() {
           this.debounce('resize', function() {
             this._render();
